@@ -17,15 +17,12 @@ public class Main {
     public static void main(String[] args) {
         Pasien pasien = new Pasien();
         Dokter dokter = new Dokter();
+        AntrianPasien antrian=new AntrianPasien();
         //Set Pasien
         pasien.setNama("Gregorius Bryan Osaldi");
         pasien.setAlamat("Jalan Paingan 6, Maguwoharjo, Kab.Sleman, Daerah Istimewa Yogyakarta");
         pasien.setTempatLahir("Sukaraya");
         try {
-            pasien.setTanggalLahir(3);
-            pasien.setBulanLahir(05);
-            pasien.setTahunLahir(2000);
-            pasien.setNoRekamMedis("GREG");
             dokter.setTanggalLahir(20);
             dokter.setBulanLahir(07);
             dokter.setTahunLahir(1980);
@@ -39,7 +36,7 @@ public class Main {
         dokter.setAlamat("Maguwoharjo");
 
         //Menampilkan Output
-        pasien.printInfo();
+        antrian.getNomorAntrian(3);
         dokter.printInfo();
 
     }
