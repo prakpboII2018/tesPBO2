@@ -115,19 +115,4 @@ public class Pasien {
         SimpleDateFormat ft = new SimpleDateFormat("dd - MM - yyyy");
         System.out.println(ft.format(tanggalKelahiran));
     }
-
-    public void printInfo() {
-        System.out.printf("%-20s", "");
-        System.out.println("Daftar Antrian Pasien" + "\n");
-        System.out.printf("%-25s", "Nomor Rekam Medis Pasien");
-        System.out.print(": ");
-        getKodeNoRekamMedis();
-        System.out.printf("%-25s", "Nama Pasien");
-        System.out.println(": " + getNama());
-        System.out.printf("%-25s", "Tempat, Tanggal Lahir");
-        System.out.print(": " + getTempatLahir() + " , ");
-        getTanggalKelahiran();
-        System.out.printf("%-25s", "Alamat");
-        System.out.println(": " + getAlamat());
-    }
 }
