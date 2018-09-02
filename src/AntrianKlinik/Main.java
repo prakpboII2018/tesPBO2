@@ -15,30 +15,45 @@ import java.util.logging.Logger;
 public class Main {
 
     public static void main(String[] args) {
-        Pasien pasien = new Pasien();
+        AntrianPasien antrian = new AntrianPasien();
+        int jumlahAntrianPasien = 1;
+        Pasien[] pasien = new Pasien[jumlahAntrianPasien];
         Dokter dokter = new Dokter();
-        AntrianPasien antrian=new AntrianPasien();
-        //Set Pasien
-        pasien.setNama("Gregorius Bryan Osaldi");
-        pasien.setAlamat("Jalan Paingan 6, Maguwoharjo, Kab.Sleman, Daerah Istimewa Yogyakarta");
-        pasien.setTempatLahir("Sukaraya");
+
+        System.out.println("Jumlah pasien yang mengantri adalah " + jumlahAntrianPasien);
+
+        //Dokter
+        dokter.setNama("Kiwiliam");
+        dokter.setNomorPegawai("1234354");
+        dokter.setTempatLahir("Tajem");
         try {
-            dokter.setTanggalLahir(20);
-            dokter.setBulanLahir(07);
-            dokter.setTahunLahir(1980);
+            dokter.setTanggalLahir(12);
+            dokter.setBulanLahir(5);
+            dokter.setTahunLahir(1999);
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        dokter.setAlamat("Maguwoharjo");
+
+        //Pasien 1
+        antrian.getPasien()[0].setNama("Gregorius Bryan Osaldi");
+        antrian.getPasien()[0].setAlamat("Jalan Paingan 6, Maguwoharjo, Kab.Sleman, Daerah Istimewa Yogyakarta");
+        antrian.getPasien()[0].setTempatLahir("Sukaraya");
+        try {
+            antrian.getPasien()[0].setTanggalLahir(3);
+            antrian.getPasien()[0].setBulanLahir(05);
+            antrian.getPasien()[0].setTahunLahir(2000);
+            antrian.getPasien()[0].setNoRekamMedis("GREG");
         } catch (Exception ex) {
             System.out.println(ex);;
         }
-        //Set Dokter
-        dokter.setNama("KIWIL");
-        dokter.setNomorPegawai("1213245664");
-        dokter.setTempatLahir("Jogjakarta");
-        dokter.setAlamat("Maguwoharjo");
 
-        //Menampilkan Output
-        antrian.getNomorAntrian(3);
+        //Print Output
         dokter.printInfo();
-
+        System.out.printf("%-20s", "");
+        System.out.println("Daftar Antrian Pasien" + "\n");
+        for (int i = 0; i < jumlahAntrianPasien; i++) {
+            pasien[i].printInfo();
+        }
     }
-
 }
