@@ -18,12 +18,14 @@ public class AntrianPasien {
     private Klinik klinik;
     private Pasien[] pasien;
 
-    public void getTanggalMasuk() {
-        Date date = new Date();
-        SimpleDateFormat ft = new SimpleDateFormat("dd - MM - yyyy");
-        System.out.println(ft.format(date));
+    public Klinik getKlinik() {
+        return klinik;
     }
 
+    public void setKlinik(Klinik klinik) {
+        this.klinik = klinik;
+    }
+    
     public Pasien[] getPasien() {
         return pasien;
     }

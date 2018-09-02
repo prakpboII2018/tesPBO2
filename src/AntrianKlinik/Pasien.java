@@ -104,9 +104,9 @@ public class Pasien {
     }
 
     public void getKodeNoRekamMedis() {
-        Date tanggalKelahiran = new Date();
+        Date tanggalMasuk = new Date();
         SimpleDateFormat ft = new SimpleDateFormat("ddMMyyyy");
-        System.out.print(ft.format(tanggalKelahiran));
+        System.out.print(ft.format(tanggalMasuk));
         System.out.println(getNoRekamMedis());
     }
 
