@@ -5,9 +5,6 @@
  */
 package AntrianKlinik;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  *
  * @author admin
@@ -16,7 +13,7 @@ public class AntrianPasien {
 
     private int tanggalAntrian, bulanAntrian, tahunAntrian;
     private Klinik klinik;
-    private Pasien[] pasien;
+    private Pasien[] pasien= new Pasien[3];
 
     public Klinik getKlinik() {
         return klinik;
