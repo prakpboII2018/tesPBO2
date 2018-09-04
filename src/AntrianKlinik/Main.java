@@ -15,9 +15,9 @@ import java.util.logging.Logger;
 public class Main {
 
     public static void main(String[] args) {
-        AntrianPasien antrian = new AntrianPasien();
+
         int jumlahAntrianPasien = 1;
-        Pasien[] pasien = new Pasien[jumlahAntrianPasien];
+        AntrianPasien[] antrian = new AntrianPasien[jumlahAntrianPasien];
         Dokter dokter = new Dokter();
 
         System.out.println("Jumlah pasien yang mengantri adalah " + jumlahAntrianPasien);
@@ -36,24 +36,21 @@ public class Main {
         dokter.setAlamat("Maguwoharjo");
 
         //Pasien 1
-        antrian.getPasien()[0].setNama("Gregorius Bryan Osaldi");
-        antrian.getPasien()[0].setAlamat("Jalan Paingan 6, Maguwoharjo, Kab.Sleman, Daerah Istimewa Yogyakarta");
-        antrian.getPasien()[0].setTempatLahir("Sukaraya");
+        Pasien pasien1 = new Pasien();
+        pasien1.setNama("Gregorius Bryan Osaldi");
+        pasien1.setAlamat("Jalan Paingan 6, Maguwoharjo, Kab.Sleman, Daerah Istimewa Yogyakarta");
+        pasien1.setTempatLahir("Sukaraya");
         try {
-            antrian.getPasien()[0].setTanggalLahir(3);
-            antrian.getPasien()[0].setBulanLahir(05);
-            antrian.getPasien()[0].setTahunLahir(2000);
-            antrian.getPasien()[0].setNoRekamMedis("GREG");
+            pasien1.setTanggalLahir(3);
+            pasien1.setBulanLahir(05);
+            pasien1.setTahunLahir(2000);
+            pasien1.setNoRekamMedis("GREG");
         } catch (Exception ex) {
-            System.out.println(ex);;
+            System.out.println(ex);
         }
-
+        antrian[0].addPasien(pasien1);
         //Print Output
         dokter.printInfo();
-        System.out.printf("%-20s", "");
-        System.out.println("Daftar Antrian Pasien" + "\n");
-        for (int i = 0; i < jumlahAntrianPasien; i++) {
-            pasien[i].printInfo();
-        }
+
     }
 }

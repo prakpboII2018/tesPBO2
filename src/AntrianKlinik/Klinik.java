@@ -15,17 +15,29 @@ public class Klinik {
 
     public String getIdKlinik() {
         return idKlinik;
+        /*
+        dalam method ini kita mengembalikan value idKlinik
+        */
     }
 
     public void setIdKlinik(String idKlinik) {
         this.idKlinik = idKlinik;
+        /*
+        dalam method ini kita mengatur value idKlinik dengan parameter idKlinik
+        */
     }
 
     public String getNama() {
         return nama;
+        /*
+        dalam method ini kita mengembalikan value nama
+        */
     }
 
     public void setNama(String nama) {
         this.nama = nama;
+        /*
+        dalam method ini kita mengatur value nama dengan parameter nama
+        */
     }
 }

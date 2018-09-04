@@ -11,23 +11,58 @@ package AntrianKlinik;
  */
 public class AntrianPasien {
 
-    private int tanggalAntrian, bulanAntrian, tahunAntrian;
     private Klinik klinik;
-    private Pasien[] pasien= new Pasien[3];
+    private Pasien[] pasien;
+    private int idx;
+
+    public AntrianPasien() {
+        this.klinik = new Klinik();
+        this.pasien = new Pasien[2];
+        this.idx = 0;
+        /*
+        dalam konstruktor ini saya membuat default jika konstruktor-nya dipanggil kelas lain
+        */
+    }
 
     public Klinik getKlinik() {
         return klinik;
+        /*
+        dalam method ini kita akan mengembalikan value klinik
+        */
     }
 
     public void setKlinik(Klinik klinik) {
         this.klinik = klinik;
-    }
-    
-    public Pasien[] getPasien() {
-        return pasien;
+        /*
+        dalam method ini kita akan mengatur value klinik dengan parameter Objek klinik
+        */
     }
 
-    public void setPasien(Pasien[] pasien) {
-        this.pasien = pasien;
+    public void addPasien(Pasien pasien) throws Exception {
+        if (idx < this.pasien.length) {
+            this.pasien[idx] = pasien;
+            this.idx++;
+        } else {
+            throw new Exception("Error Pasien");
+        }
+        /*
+        dalam method ini kita akan menginputkan data setiap pasien.
+        jika idx < thiis.pasien.length true maka :
+            value dari this.pasien[idx] akan di isi dengan value objek pasien.
+            lalu idx ditambah 1.
+        jika salah maka akan melemparkan exception
+        */
+    }
+
+    public void printInfo() {
+        System.out.println("");
+        System.out.printf("%-20s", "");
+        System.out.println("Daftar Antrian Pasien" + "\n");
+        for (int i = 0; i < idx; i++) {
+            pasien[i].printInfo();
+        }
+        /*
+        dalam method ini memudahkan kita untuk menampilkan hasil program
+        */
     }
 }
