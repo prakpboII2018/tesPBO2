@@ -18,11 +18,11 @@ public class Main {
 
         int jumlahAntrianPasien = 1;
         AntrianPasien[] antrian = new AntrianPasien[jumlahAntrianPasien];
-        Dokter dokter = new Dokter();
 
         System.out.println("Jumlah pasien yang mengantri adalah " + jumlahAntrianPasien);
 
         //Dokter
+        Dokter dokter = new Dokter();
         dokter.setNama("Kiwiliam");
         dokter.setNomorPegawai("1234354");
         dokter.setTempatLahir("Tajem");
@@ -34,6 +34,15 @@ public class Main {
             System.out.println(ex);
         }
         dokter.setAlamat("Maguwoharjo");
+        
+        //Deklarasi setiap index
+        antrian[0] = new AntrianPasien();
+
+        //Klinik 1
+        Klinik klinik = new Klinik();
+        klinik.setIdKlinik("1234521KL");
+        klinik.setNama("Sanata Dharma");
+        antrian[0].addKlinik(klinik);
 
         //Pasien 1
         Pasien pasien1 = new Pasien();
@@ -45,12 +54,16 @@ public class Main {
             pasien1.setBulanLahir(05);
             pasien1.setTahunLahir(2000);
             pasien1.setNoRekamMedis("GREG");
+            antrian[0].addPasien(pasien1);
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        antrian[0].addPasien(pasien1);
+
         //Print Output
         dokter.printInfo();
+        for (int i = 0; i < antrian.length; i++) {
+            antrian[i].printInfo();
+        }
 
     }
 }
