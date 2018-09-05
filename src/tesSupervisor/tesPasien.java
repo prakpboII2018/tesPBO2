@@ -21,5 +21,12 @@ public class tesPasien {
         } catch (Exception ex) {
             Logger.getLogger(tesPasien.class.getName()).log(Level.SEVERE, null, ex);
         }
+        Pasien tes1 = new Pasien();
+        try {
+            tes1.setTanggalLahir(10);
+            System.out.println("Tanggal : "+tes1.getTanggalLahir());
+        } catch (Exception ex) {
+            Logger.getLogger(tesPasien.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
